@@ -28,11 +28,3 @@ News Model
     title: string,
     description: string,
 }
-
-
-
-
-// type : match/tour
-tourId, matchId, sportId these foreign keys news table will have.
-
-problem 1 : pagination + indexing.
