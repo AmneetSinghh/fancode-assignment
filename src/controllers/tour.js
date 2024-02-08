@@ -4,7 +4,6 @@ const getAllTours = async () => {
     return await Tour.getAllTours();
 }
 
-// validation layer.
 const getMatchesByTourName = async params => {
     const { name, offset } = params;
     if (!name) {
@@ -12,7 +11,7 @@ const getMatchesByTourName = async params => {
     }
     if (!offset) {
         console.log('Missing required parameter: offset, it will be considered as zero');
-        params.offset = 0 // by default.
+        params.offset = 0
     }
 
     return await Tour.getMatchesByTourName(params);

@@ -13,9 +13,9 @@ const getSportByTourId = async id => {
 }
 
 /*
-* index on tourName  ( fast )
-* for offset using match's primary key : indexed ( fast )
-*/
+ * index on tourName  ( fast )
+ * For offset we used match table primary key : indexed ( fast )
+ */
 
 const getMatchesByTourName = async params => {
     const statement = 'select m.*, t.name as tourName from matches m left join tours t on m.tourId = t.id where t.name = ? and m.id > ? limit 2';
@@ -23,7 +23,9 @@ const getMatchesByTourName = async params => {
     return await mysql.query(statement, parameters);
 }
 
-// for testing purpose.
+/*
+ * for testing purpose.
+ */
 const insertTours = async () => {
     for (let i = 1; i <= 1000000; i++) {
         const statement = 'INSERT IGNORE INTO mydb.tours (name, sportId, startTime, endTime) VALUES (?, 1, ?, ?)';

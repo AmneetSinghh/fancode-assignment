@@ -9,7 +9,6 @@ module.exports = function(app) {
         }
     });
     
-
     app.route('/tour/matches').get(async (req, res, next) => {
         try {
             let params = req.query;
